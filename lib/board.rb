@@ -31,14 +31,15 @@ class Board
 
   def chip_place(letter)
     chip_col = @keys.index(letter)
-
-
-
+    flip_board[chip_col] << x_or_o
+    flip_board[chip_col].shift
+    binding.pry
     @board
   end
 
-
-
+  def flip_board
+    @board.transpose
+  end
 
 
 
