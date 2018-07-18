@@ -12,7 +12,7 @@ class BoardTest < Minitest::Test
 
   def test_it_places_chip
     board = Board.new
-    
+
 
     expected = [
 
@@ -21,12 +21,22 @@ class BoardTest < Minitest::Test
     [".",".",".",".",".",".","."],
     [".",".",".",".",".",".","."],
     [".",".",".",".",".",".","."],
-    ["X",".",".",".",".",".","."]
+    [".",".",".","X",".",".","."]
     ]
-    actual = board.chip_place("A")
+    actual = board.chip_place("D")
 
     assert_equal expected, actual
   end
+
+  def test_computer_can_play
+    skip
+      board = Board.new
+      
+
+
+
+  end
+
 
 
 
