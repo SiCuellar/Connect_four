@@ -3,7 +3,7 @@ require "pry"
 class Board
 
   attr :board
-#made board that is oposite before being transposd
+#made board that is oposite before being transposed
   def initialize
 
 
@@ -62,7 +62,15 @@ class Board
     @board
     user_input = gets.chomp
     chip_place(user_input)
+    display_board
+    sleep(0.5)
     comp_chip_place
+    sleep(0.5)
     display_board
   end
+
+
+
+
+
 end
