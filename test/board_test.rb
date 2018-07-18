@@ -28,21 +28,10 @@ class BoardTest < Minitest::Test
     assert_equal expected, actual
   end
 
+# how do make a test for a rand(6)?
   def test_computer_can_play
     skip
       board = Board.new
-      
-
-
-
   end
-
-
-
-
-
-
-
-
 
 end
