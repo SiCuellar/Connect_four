@@ -17,6 +17,8 @@ class Board
     [".",".",".",".",".","."],
     [".",".",".",".",".","."],
     ]
+
+    # @horizantal_win = false
   end
 
 #displays the board with spaces
@@ -64,14 +66,23 @@ class Board
     user_input = gets.chomp
     chip_place(user_input)
     display_board
-    sleep(1)
+    
     puts"Computer Thinking on how to dominate the world!"
     comp_chip_place
     sleep(1)
     display_board
   end
 
+#
+#how do I solve this without hard coding it?
+#obtain the current array, get index of current position
+# make a method that checks the range from the current positon index towards both sides
+  def horizantal_win
+    chip_place.index
 
+  end
+# I can also check if the index in position 3 is filled if its not i don't
+# have to run the horizantal_win method.  Food For thought!
 
 
 

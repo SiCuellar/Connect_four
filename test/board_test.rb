@@ -34,4 +34,19 @@ class BoardTest < Minitest::Test
       board = Board.new
   end
 
+# The struggle with the testing is real :0
+
+  def test_horizontal_winning_condtion
+
+
+
+  end
+#HOW DO YOU TEST THISSSSSSS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# :0 I CANT WITH MY LIFE LOL
+
+
+
+
+
+
 end
