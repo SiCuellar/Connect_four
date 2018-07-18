@@ -60,12 +60,14 @@ class Board
 #calls all other methods
   def master_method
     @board
+    puts"It is your Turn!!!!!"
     user_input = gets.chomp
     chip_place(user_input)
     display_board
-    sleep(0.5)
+    sleep(1)
+    puts"Computer Thinking on how to dominate the world!"
     comp_chip_place
-    sleep(0.5)
+    sleep(1)
     display_board
   end
 
