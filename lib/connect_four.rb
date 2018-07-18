@@ -8,6 +8,12 @@ board.display_board
 
 
 
+loop do
+  board.master_method
+end
+
+
+
 
 
 
