@@ -7,14 +7,9 @@ board = Board.new
 board.display_board
 
 
-
+#plays master_method that calls all other methods
 loop do
   board.master_method
 end
 
-
-
-
-
-
-#classes
+#now how do I create winnign methods?
