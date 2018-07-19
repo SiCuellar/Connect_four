@@ -18,7 +18,7 @@ class Board
     [".",".",".",".",".","."],
     ]
 
-    # @horizantal_win = false
+    @endgame = false
   end
 
 #displays the board with spaces
@@ -58,28 +58,55 @@ class Board
         @board[chip_col][5] = "O"
       end
   end
-
+!
 #calls all other methods
   def master_method
-    @board
-    puts"It is your Turn!!!!!"
-    user_input = gets.chomp
-    chip_place(user_input)
-    display_board
-    
-    puts"Computer Thinking on how to dominate the world!"
-    comp_chip_place
-    sleep(1)
-    display_board
+    until @endgame == true
+      @board
+      puts"It is your Turn!!!!!"
+      user_input = gets.chomp
+      chip_place(user_input)
+      win?
+      display_board
+      puts"Computer Thinking on how to dominate the world!"
+      comp_chip_place
+      sleep(1)
+      win?
+      display_board
+    end
   end
 
 #
+
+
+  def win?
+    vertical_win
+
+  end
+
+
+
+
+
 #how do I solve this without hard coding it?
 #obtain the current array, get index of current position
 # make a method that checks the range from the current positon index towards both sides
-  def horizantal_win
-    chip_place.index
-
+  def vertical_win
+    @board.map do |array|
+      r = array.join
+      if r.include?("XXXX")
+        @endgame = true
+        puts "You are Victorious!"
+        return true
+      elsif array.join.include?("OOOO")
+        @endgame = true
+        puts "Skynet has taken over the world!"
+        puts "You have failed mankind"
+        return true
+      else
+        false
+      end
+    end
   end
 # I can also check if the index in position 3 is filled if its not i don't
 # have to run the horizantal_win method.  Food For thought!

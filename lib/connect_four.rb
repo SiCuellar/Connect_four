@@ -8,8 +8,8 @@ board.display_board
 
 
 #plays master_method that calls all other methods
-loop do
-  board.master_method
-end
+
+board.master_method
+
 
 #now how do I create winnign methods?
