@@ -70,7 +70,7 @@ class Board
       display_board
       puts"Computer Thinking on how to dominate the world!"
       comp_chip_place
-      sleep(1)
+      sleep(0.5)
       win?
       display_board
     end
@@ -78,19 +78,18 @@ class Board
 
 #
 
-
+# fix this to make it break the loop before it prints out the other boardd
   def win?
     vertical_win
+    horizontal_win
 
   end
 
 
 
 
-
-#how do I solve this without hard coding it?
-#obtain the current array, get index of current position
-# make a method that checks the range from the current positon index towards both sides
+# Maybe clean this up more and place all the puts statements within the
+# the win?
   def vertical_win
     @board.map do |array|
       r = array.join
@@ -110,6 +109,26 @@ class Board
   end
 # I can also check if the index in position 3 is filled if its not i don't
 # have to run the horizantal_win method.  Food For thought!
+
+def horizontal_win
+  @board.transpose.map do |array|
+    r = array.join
+    if r.include?("XXXX")
+      @endgame = true
+      puts "You are Victorious!"
+      return true
+    elsif array.join.include?("OOOO")
+      @endgame = true
+      puts "Skynet has taken over the world!"
+      puts "You have failed mankind"
+      return true
+    else
+      false
+    end
+  end
+end
+
+
 
 
 
